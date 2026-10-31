@@ -1,0 +1,106 @@
+media:
+input: media
+output: /media
+
+content:
+
+- name: lessons
+  label: محتوای آموزشی
+  type: collection
+  path: content/lessons
+  filename: "{primary}.md"
+  format: yaml-frontmatter
+  view:
+  primary: title
+  fields:
+  - title
+  - category
+  - level
+  fields:
+  
+  - name: title
+    label: عنوان محتوا
+    type: string
+    required: true
+  
+  - name: category
+    label: دسته‌بندی
+    type: select
+    options:
+    values:
+    - واژگان
+    - اصطلاحات
+    - گرامر
+    - مکالمه
+    - ویدئو
+    - فایل صوتی
+    - جزوه و PDF
+    - تمرین و آزمون
+  
+  - name: level
+    label: سطح زبان
+    type: select
+    options:
+    values:
+    - مبتدی
+    - A1
+    - A2
+    - B1
+    - B2
+    - C1
+    - همه سطوح
+  
+  - name: description
+    label: توضیحات
+    type: text
+  
+  - name: cover
+    label: تصویر محتوا
+    type: image
+  
+  - name: body
+    label: متن آموزشی
+    type: rich-text
+  
+  - name: attachment
+    label: فایل ضمیمه
+    type: file
+  
+  - name: video_url
+    label: لینک ویدئو
+    type: string
+  
+  - name: audio_url
+    label: لینک صوت
+    type: string
+  
+  - name: published
+    label: انتشار محتوا
+    type: boolean
+
+- name: site_settings
+  label: تنظیمات سایت
+  type: file
+  path: content/site-settings.json
+  format: json
+  fields:
+  
+  - name: site_name
+    label: نام سایت
+    type: string
+  
+  - name: teacher_name
+    label: نام مدرس
+    type: string
+  
+  - name: instagram
+    label: آدرس اینستاگرام
+    type: string
+  
+  - name: contact
+    label: اطلاعات تماس
+    type: string
+  
+  - name: welcome_message
+    label: پیام خوشامدگویی
+    type: text
